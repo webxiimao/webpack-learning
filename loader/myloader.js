@@ -2,7 +2,7 @@
  * @Author: maoyuyu
  * @Date: 2020-03-30 13:57:55
  * @LastEditors: maoyuyu
- * @LastEditTime: 2020-04-16 17:58:53
+ * @LastEditTime: 2020-04-18 14:20:30
  * @Description: 
  */
 
@@ -33,11 +33,6 @@ module.exports = function (code) {
     },
     JSXElement:{
       exit(path){
-        // console.log("exit",path);
-        // t.assertCallExpression(path.node,{
-          
-        // })
-        
         const node = path.node
         const openingElement = node.openingElement
         path.replaceWith(t.callExpression(t.Identifier("render"),[

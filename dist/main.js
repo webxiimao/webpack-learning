@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("class ASTrender {\n  render() {\n    return render(\"div\", {}, [\"hello babel, my name is \", render(\"span\", {\n      \"class\": \"red\"\n    }, [\"xii\"])]);\n  }\n\n}\n\n//# sourceURL=webpack:///./src/main.jsx?");
+eval("const render = (tag, attr, children) => {\n  const element = document.createElement(tag);\n\n  for (let key in attr) {\n    element.setAttribute(key, attr[key]);\n  }\n\n  if (typeof children === 'undefined') {\n    return element;\n  }\n\n  if (typeof children === \"string\") {\n    element.appendChild(document.createTextNode(children));\n  } else {\n    for (let ele of children) {\n      if (typeof ele === \"string\") {\n        ele = document.createTextNode(ele);\n      }\n\n      element.appendChild(ele);\n    }\n  }\n\n  return element;\n};\n\nclass ASTrender {\n  render() {\n    return render(\"div\", {\n      \"class\": \"father\",\n      \"sss\": \"sss\"\n    }, [\"hello babel, my name is \", render(\"span\", {\n      \"class\": \"red\"\n    }, [\"xii\"])]);\n  }\n\n}\n\nconst component = new ASTrender();\ndocument.getElementById('app').appendChild(component.render());\n\n//# sourceURL=webpack:///./src/main.jsx?");
 
 /***/ })
 

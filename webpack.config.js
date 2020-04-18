@@ -2,7 +2,7 @@
  * @Author: maoyuyu
  * @Date: 2020-03-30 13:46:03
  * @LastEditors: maoyuyu
- * @LastEditTime: 2020-03-30 15:09:05
+ * @LastEditTime: 2020-04-18 14:23:34
  * @Description: 
  */
 const path = require("path")
@@ -24,7 +24,6 @@ const path = require("path")
             }
           }
        },
-
      ]
    }
  }
